@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block titulo %}Vende un Auto{% endblock titulo %}
+{% block content %}
+
+<div class="container">
+    <div class="card" style="width: 28rem; margin: 20px auto 0;">
+      <div class="card-body">
+        <form action="/agregar" method="post" class="mt-4">
+          <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" id="precio" name="precio" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="modelo" class="form-label">Modelo</label>
+            <input type="text" id="modelo" name="modelo" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="marca" class="form-label">Marca</label>
+            <input type="text" id="marca" name="marca" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="anho" class="form-label">Año</label>
+            <input type="number" id="anho" name="anho" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                placeholder="Escribe Una Descripcion"
+                id="descripcion"
+                name="descripcion"
+                style="height: 100px"
+              ></textarea>
+              <label for="floatingTextarea2">Descripcion</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary float-end"> Agregar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+{% endblock content %}
