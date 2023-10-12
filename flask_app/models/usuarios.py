@@ -11,6 +11,7 @@ class Usuario:
         self.apellido = data['apellido']
         self.email = data['email']
         self.contraseña = data['contraseña']
+        self.rol = data['rol']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
@@ -46,7 +47,7 @@ class Usuario:
 
     @classmethod
     def save(cls, data ):
-        query = "INSERT INTO usuarios (nombre, apellido, email, contraseña, created_at, updated_at) VALUES (%(nombre)s,%(apellido)s,%(email)s, %(contraseña)s, NOW(), NOW());"
+        query = "INSERT INTO usuarios (nombre, apellido, email, contraseña, rol, created_at, updated_at) VALUES (%(nombre)s,%(apellido)s,%(email)s, %(contraseña)s,%(rol)s, NOW(), NOW());"
         return connectToMySQL(os.getenv('BASE_DATOS')).query_db( query, data )
     
     @classmethod

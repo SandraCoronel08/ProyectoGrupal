@@ -10,7 +10,7 @@ def registro():
 
     if 'usuario' in session:
         flash("ya estás LOGEADO!!!! eres " + session['usuario']['email'], "info")
-        return redirect("/")
+        return redirect("/panel")
 
     return render_template("login.html")
 
@@ -30,7 +30,7 @@ def procesar_login():
             'id': usuario.id,
             'email': usuario.email
         }
-        return redirect("/")
+        return redirect("/panel")
 
     flash("la contraseña o el correo no es válido", "error")
     return redirect("/login")
