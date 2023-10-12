@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `bd_peluqueria`.`clientes` (
   `direccion` VARCHAR(255) NOT NULL,
   `telefono` INT NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
-  `create_at` DATETIME NULL,
-  `update_at` DATETIME NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
   `usuario_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_clientes_usuarios1_idx` (`usuario_id` ASC) VISIBLE,
@@ -73,6 +73,8 @@ CREATE TABLE IF NOT EXISTS `bd_peluqueria`.`servicios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre_servicio` VARCHAR(45) NULL,
   `precio` INT NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -82,8 +84,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd_peluqueria`.`reservas` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `create_at` DATETIME NULL,
-  `update_at` DATETIME NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
   `cliente_id` INT NOT NULL,
   `servicio_id` INT NOT NULL,
   `peluquero_id` INT NOT NULL,
@@ -115,8 +117,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bd_peluqueria`.`pagos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `monto` INT NOT NULL,
-  `create_at` DATETIME NULL,
-  `update_at` DATETIME NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
   `cliente_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_pagos_clientes1_idx` (`cliente_id` ASC) VISIBLE,
@@ -137,6 +139,8 @@ CREATE TABLE IF NOT EXISTS `bd_peluqueria`.`peluqueros` (
   `apellido` VARCHAR(255) NOT NULL,
   `correo` VARCHAR(255) NOT NULL,
   `especialidad` VARCHAR(255) NOT NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

@@ -1,7 +1,12 @@
-.enlace{
-    text-decoration: underline;
-    color: blue;
+.opciones{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
 }
-.enlace:hover{
-    color: red;
+
+.nav-link.opciones{
+    margin-right: 20px;
+}
+.navbar-brand.mx-auto {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

@@ -1,6 +1,6 @@
 
 from flask_app import app
-from flask_app.controllers import core, usuario, bandas
+from flask_app.controllers import core, usuario, clientes
 from dotenv import load_dotenv
 
 

@@ -13,6 +13,7 @@ class Usuario:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.clientes = []  
 
     def __str__(self) -> str:
         return f"{self.email} ({self.id})"
