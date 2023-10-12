@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-2 fw-bold" href="/">MiSalon {{user_in_session.nombre_peluqueria}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto ">
+                <li class="nav-item" id="boton">
+                    <a class="nav-link enlace" aria-current="page" href="/inicio"> Inicio </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link enlace" aria-current="page" href="/nuevo"> Nueva Banda </a>
+                </li>
+            </ul>
+            <div class="d-flex" role="search">
+                <a href="/salir" class="btn btn-danger"> Cerrar Sesión </a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block estilos %}
+{% endblock %}
+
+
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-6">
+        <h3>Crear una Banda</h3>
+        <hr>
+        <form action="/procesar_banda" method="post">
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Nombre</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="nombre" name="nombre" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Genero</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="genero" name="genero" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Ciudad de Origen</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="lugar_creacion" name="lugar_creacion" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-primary" type="submit">Añadir</button>
+                </div>
+            </div>
+        </form>
+        
+
+    </div>
+</div>
+
+{% endblock %}

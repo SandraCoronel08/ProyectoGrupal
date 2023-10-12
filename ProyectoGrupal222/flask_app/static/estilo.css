@@ -1,0 +1,7 @@
+.enlace{
+    text-decoration: underline;
+    color: blue;
+}
+.enlace:hover{
+    color: red;
+}

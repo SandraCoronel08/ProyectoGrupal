@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+{% endblock %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div>
+    <h3 class="text-center">All Bands</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Clientes</th>
+                <th>Servicios</th>
+                <th>Reservas</th>
+                <th>Profesionales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for banda in bandas %}
+            <tr>
+                <td>{{ banda.nombre }}</td>
+                <td>{{ banda.usuario.nombre}} {{banda.usuario.apellido }}</td>
+                <td>{{ banda.genero }}</td>
+                <td>
+                    {% if banda.usuario_id == usuario.id %}
+                        <a href="/editar/{{banda.id}}">editar</a> |
+                        <a href="/eliminar/{{banda.id}}"> eliminar</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    
+</div>
+
+{% endblock %}
